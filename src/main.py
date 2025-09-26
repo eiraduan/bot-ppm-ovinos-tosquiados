@@ -2,6 +2,7 @@ import logging
 import download
 import join_files
 import clean_table
+import insert
 from pathlib import Path
 
 def setup_master_logging(log_file='processo_completo.log'):
