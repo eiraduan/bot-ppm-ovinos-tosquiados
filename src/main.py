@@ -1,5 +1,6 @@
 import logging
 import download
+import join_files
 from pathlib import Path
 
 def setup_master_logging(log_file='processo_completo.log'):
@@ -29,6 +30,9 @@ def main():
     try:
         logger.info("--- Etapa 1: Download dos arquivos ---")
         download.main()
+        
+        logger.info("--- Etapa 2: Juntando os arquivos no PPM_RO_OVINOS_TOSQUIADOS_FINAL.xlsx---")
+        join_files.main()
 
     except Exception as e:
         logger.error(f"O processo falhou em alguma etapa: {e}")
