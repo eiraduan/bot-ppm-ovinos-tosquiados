@@ -38,6 +38,9 @@ def main():
         logger.info("--- Etapa 3: Limpando tabelas no banco de dados ---")
         clean_table.main()
 
+        logger.info("--- Etapa 4: Inserindo dados na tabela principal ---")
+        insert.main()
+
     except Exception as e:
         logger.error(f"O processo falhou em alguma etapa: {e}")
 
