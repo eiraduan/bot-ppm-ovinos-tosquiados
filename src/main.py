@@ -3,6 +3,7 @@ import download
 import join_files
 import clean_table
 import insert
+import create_table_map
 from pathlib import Path
 
 def setup_master_logging(log_file='processo_completo.log'):
@@ -41,6 +42,11 @@ def main():
 
         logger.info("--- Etapa 4: Inserindo dados na tabela principal ---")
         insert.main()
+
+        logger.info("--- Etapa 5: Criando a tabela de mapa ---")
+        create_table_map.main()
+
+        logger.info("Processo concluído com sucesso!")
 
     except Exception as e:
         logger.error(f"O processo falhou em alguma etapa: {e}")
